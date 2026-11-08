@@ -1,0 +1,9 @@
+# raw materials from the group (original photos, video, unrelated downloads); the web-ready copies live in page/assets
+/assets/
+*.bak.html
+.impeccable/
+
+# working material that stays out of the public repo (kept locally; full history is in omribh-coder/bamat-mifgash)
+/sketches/
+/compare/
+*.docx

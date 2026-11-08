@@ -1,0 +1,9 @@
+# Netlify serves the ready-made launch folder; there is no build step on their side.
+# After changing the draft, run `node tools/build-site.mjs` locally and push.
+[build]
+  publish = "site"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
