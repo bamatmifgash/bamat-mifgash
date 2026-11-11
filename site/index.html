@@ -331,6 +331,14 @@ footer b{font:var(--dw) calc(34px * max(var(--ds),.7))/1 var(--display);color:va
 .desk-toggle.show{opacity:.62;translate:0 0;pointer-events:auto}
 .desk-toggle.show:hover,.desk-toggle.show:focus-visible,.desk-toggle[aria-expanded="true"]{opacity:1}
 @media (max-width:760px){.desk-toggle{bottom:calc(84px + env(safe-area-inset-bottom, 0px))}}
+/* Netlify's free plan adds its badge (an iframe, 64px tall) in the bottom right corner of the live site:
+   while it is there, the floating buttons sit above it, and on a phone the order bar grows under the button to hold it */
+body:has(> #nl-badge-frame) .wa-float{bottom:calc(82px + env(safe-area-inset-bottom, 0px))}
+@media (max-width:760px){
+  body:has(> #nl-badge-frame) .dock{padding-bottom:calc(70px + env(safe-area-inset-bottom, 0px))}
+  body:has(> #nl-badge-frame) .desk-toggle{bottom:calc(148px + env(safe-area-inset-bottom, 0px))}
+  body:has(> #nl-badge-frame) footer.band{padding-bottom:194px}
+}
 .desk{position:fixed;z-index:31;left:max(14px, env(safe-area-inset-left, 0px));bottom:calc(76px + env(safe-area-inset-bottom, 0px));
   width:min(340px, calc(100vw - 28px));box-sizing:border-box;background:var(--note);border-radius:18px;padding:18px;display:grid;gap:14px;
   box-shadow:0 24px 48px -24px rgba(0,0,0,.7)}
